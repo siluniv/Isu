@@ -1,0 +1,14 @@
+/*------------------------------------*\
+  Components > Post
+\*------------------------------------*/
+
+.c-post {
+  > * + * {
+    margin-top: $space-32;
+  }
+
+  @include mq($from: tablet) {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+}

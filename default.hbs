@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang='{{ @site.locale }}'>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+  <title>{{ meta_title }}</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+  <link rel="stylesheet" href="{{asset "public/bluedot.css" hasMinFile="true"}}"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+  <script type="text/javascript">
+      var bluedot_user_id = {{#if @member}}'{{@member.uuid}}'{{else}}null{{/if}};
+  </script>
+
+  {{> fonts }}
+  {{> compiled/inline-css }}
+  {{> dark-mode-js }}
+
+  <style type="text/css">
+    /* For Bluedot */
+    :root {
+      --body-background:var(--bg-color);
+      --content-background:var(--bg-color);
+      --paywall-background:rgba(0,0,0,0.8);
+      --text:var(--color-text);
+      --sub-text:var(--color-gray);
+    }
+
+    /* 브라우저를 다크 테마로 사용중인 경우 공통 푸터 디폴트 값 변경 */
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-user-color-scheme]) {
+        --sub-text:hsla(0,0%,100%,.3);
+      }
+
+      :root:not([data-user-color-scheme]) .bluedot-footer .footer-content hr {
+        border-bottom-color:hsla(0,0%,100%,.05)
+      }
+    }
+
+    .bluedot-footer {
+      text-align:left;
+      background: transparent;
+      padding-top:10px; padding-bottom:0;
+    }
+  </style>
+
+  {{!-- Custom Style --}}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}" />
+  {{> css/default }}
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    var site_url                            = '{{ @site.url }}',
+        pagination_next_page_number         = '{{ pagination.next }}',
+        pagination_available_pages_number   = '{{ pagination.pages }}',
+        posts_total_number                  = '{{ pagination.total }}',
+        pagination_loading_text             = '{{t "Loading" }}',
+        pagination_more_posts_text          = '{{t "Load More" }}',
+        clipboard_copied_text               = '{{t "Link copied to clipboard" }}';
+  </script>
+
+  {{ ghost_head }}
+</head>
+<body class='{{ body_class }} {{block "dynamic_body_class"}}'>
+
+  <div class='c-site-container'>
+    {{> header }}
+
+    {{{ body }}}
+
+    {{> unreadbook_footer}}
+
+    <div class="c-footer b-footer">
+      <div class="o-grid">
+        <div class="o-grid__col o-grid__col--full">
+          {{ bluedot_footer }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src='{{ asset 'js/app.min.js' }}'></script>
+
+  <script>
+    var posts_loop = document.querySelector('.c-loop');
+    if (posts_loop) {
+      posts_loop.style.counterReset = 'episode-number ' + (parseInt(posts_total_number) + 1);
+    }
+  </script>
+
+  {{{block "scripts"}}}
+
+  {{ ghost_foot }}
+</body>
+</html>

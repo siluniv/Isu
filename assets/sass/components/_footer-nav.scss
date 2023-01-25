@@ -1,0 +1,31 @@
+/*------------------------------------*\
+  Components > Footer Navigation
+\*------------------------------------*/
+
+.c-footer-nav {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+
+  li {
+    font-size: $type-xs;
+    line-height: $type-xs-lh;
+
+    @include mq($until: desktop) {
+      margin-bottom: half($space-8);
+    }
+
+    &:not(:last-child) {
+      margin-right: $space-16;
+    }
+  }
+
+  a {
+    color: var(--color-gray);
+    border-bottom-width: 0;
+
+    @include attention() {
+      color: var(--color-brand);
+    }
+  }
+}

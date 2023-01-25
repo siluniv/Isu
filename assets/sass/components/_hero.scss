@@ -1,0 +1,111 @@
+/*------------------------------------*\
+  Components > Hero
+\*------------------------------------*/
+
+.c-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: $space-72 0 $space-48;
+  margin-bottom: $space-48;
+  background-color: var(--bg-gray);
+
+  @include mq($from: tablet) {
+    padding: double($space-56) 0 $space-80;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: 20%;
+  }
+
+  &__inner {
+    @include mq($from: tablet) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    @include mq($from: desktop) {
+      padding-right: $space-32;
+    }
+
+    > * + * {
+      margin-top: $space-16;
+    }
+  }
+
+  &__description {
+    font-size: $type-lg;
+    line-height:  $type-lg-lh;
+
+    @include mq($from: tablet) {
+      font-size: $type-xl;
+      line-height:  $type-xl-lh;
+    }
+
+    @include mq($from: desktop) {
+      font-size: $type-xl;
+      line-height:  $type-xl-lh;
+    }
+
+    > * + * {
+      margin-top: $space-8;
+    }
+
+    h2,
+    h3 {
+      font-size: $type--h-sm;
+      line-height: $type--h-sm-lh;
+      letter-spacing: - $global-letter-spacing;
+
+      @include mq($from: tablet) {
+        font-size: $type--h-md;
+        line-height: $type--h-md-lh;
+      }
+
+      @include mq($from: desktop) {
+        font-size: $type--h-lg;
+        line-height: $type--h-lg-lh;
+        letter-spacing: - double($global-letter-spacing);
+      }
+    }
+
+    p {
+      font-size: $type-md;
+      line-height:  $type-md-lh;
+
+      @include mq($from: tablet) {
+        font-size: $type-lg;
+        line-height:  $type-lg-lh;
+      }
+
+      @include mq($from: desktop) {
+        font-size: $type-xl;
+        line-height:  $type-xl-lh;
+      }
+    }
+  }
+}
+
+.c-hero-image {
+  border-radius: $global-border-radius;
+  box-shadow: var(--image-shadow);
+
+  @include mq($until: tablet) {
+    margin-top: $space-32;
+  }
+
+  @include mq($from: tablet) {
+    max-height: 40vh;
+  }
+
+  @include mq($from: tablet) {
+    margin-left: auto;
+    margin-right: $space-8;
+  }
+}

@@ -1,0 +1,13 @@
+<style>
+:root {
+  --accent-color: {{ @site.accent_color }};
+  --shop-accent-color: {{ @custom.shop_point_color }};
+  --shop-accent-background-color: {{ @custom.shop_point_background_color }};
+}
+
+@media (min-width: 500px) and (max-width: 768px) {
+  .bluedot-products-list .bluedot-product-card {
+    flex:0 50%;
+  }
+}
+</style>

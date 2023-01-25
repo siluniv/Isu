@@ -1,0 +1,46 @@
+/*------------------------------------*\
+  Components > Archive
+\*------------------------------------*/
+
+.c-archive {
+  padding: $space-96 0 $space-48;
+  margin-bottom: $space-48;
+  background-color: var(--bg-gray);
+
+  @include mq($from: tablet) {
+    padding: double($space-72) 0 $space-96;
+  }
+
+  > * + * {
+    margin-top: $space-32;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: $type--h-sm;
+    line-height: $type--h-sm-lh;
+
+    @include mq($from: tablet) {
+      font-size: $type--h-md;
+      line-height: $type--h-md-lh;
+    }
+  }
+
+  &__description {
+    margin-top: $space-8;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: $type-lg;
+    line-height:  $type-lg-lh;
+
+    @include mq($from: desktop) {
+      font-size: $type-xl;
+      line-height:  $type-xl-lh;
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+}

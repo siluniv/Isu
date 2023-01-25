@@ -1,0 +1,19 @@
+/*------------------------------------*\
+  Components > Logo
+\*------------------------------------*/
+
+.c-logo {
+  &__link {
+    display: block;
+    color: var(--color-text);
+    line-height: 1;
+    font-size: double($type-xs);
+    font-weight: $type-900;
+    text-transform: uppercase;
+    letter-spacing: - $global-letter-spacing;
+  }
+
+  &__img {
+    max-height: $space-32;
+  }
+}

@@ -1,0 +1,23 @@
+{{!< default}}
+
+<div class='o-wrapper'>
+  {{> hero }}
+
+  <div class='o-grid'>
+    <div class='o-grid__col o-grid__col--full'>
+      <div class='c-title-bar'>
+        <h3 class='c-title-bar__title'>{{t 'Latest Episodes'}}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class='o-grid js-grid c-loop'>
+    {{> loop }}
+  </div>
+
+  <div class='o-grid'>
+    {{ pagination }}
+  </div>
+
+  {{> shop }}
+</div>

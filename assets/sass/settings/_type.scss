@@ -1,0 +1,68 @@
+// *----------------------------------*\
+//  Settings > Type
+// *----------------------------------*/
+
+$line-height-base: 1.5;
+$type-serif: Georgia, serif;
+$type-sans-serif: "Noto Sans KR", sans-serif;
+
+
+// Type Scale
+// Inspired by: https://mozilla.design/firefox/typography/
+// lh == Line Height
+
+// Heading
+// (110% rounded to a multiple of 4)
+
+$type--h-xxl:  54px;
+$type--h-xl:   46px;
+$type--h-lg:   38px;
+$type--h-md:   30px;
+$type--h-sm:   22px;
+$type--h-xs:   14px;
+$type--h-xxs:  10px;
+$type--h-xxxs: 6px;
+
+$type--h-xxl-lh:  62px;
+$type--h-xl-lh:   54px;
+$type--h-lg-lh:   46px;
+$type--h-md-lh:   38px;
+$type--h-sm-lh:   30px;
+$type--h-xs-lh:   22px;
+$type--h-xxs-lh:  14px;
+$type--h-xxxs-lh: 10px;
+
+$type--h-18: 18px;
+$type--h-15: 15px;
+$type--h-14: 14px;
+$type--h-10: 10px;
+
+
+// Body Text
+// (150% rounded to a multiple of2)
+
+$type-xl:    18px;
+$type-md-lg: 16px;
+$type-lg:    14px;
+$type-md:    13px;
+$type-sm:    12px;
+$type-xs:    10px;
+
+$type-xl-lh:    28px;
+$type-md-lg-lh: 26px;
+$type-lg-lh:    24px;
+$type-md-lh:    20px;
+$type-sm-lh:    18px;
+$type-xs-lh:    14px;
+
+$type-10: 10px;
+$type-14: 14px;
+
+
+// Type Weights
+$type-400: 400;
+$type-500: 500;
+$type-600: 600;
+$type-700: 700;
+$type-800: 800;
+$type-900: 900;

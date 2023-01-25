@@ -1,0 +1,29 @@
+/*------------------------------------*\
+  Components > title bar
+\*------------------------------------*/
+
+.c-title-bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: $space-16;
+
+  &__title {
+    margin-bottom: 0;
+    font-size: $type-xl;
+    line-height: 1;
+    font-weight: $type-800;
+    text-transform: uppercase;
+    letter-spacing: - $global-letter-spacing;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    transition: $global-transition;
+
+    @include attention() {
+      color: var(--color-brand);
+    }
+  }
+}

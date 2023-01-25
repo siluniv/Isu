@@ -1,0 +1,52 @@
+{{!< default}}
+
+{{#post}}
+
+<main class='o-wrapper'>
+  <article>
+    {{> post-hero }}
+
+    <div class='o-grid'>
+      <div class='o-grid__col o-grid__col--center o-grid__col--4-4-s'>
+        <div class='c-{{ post_class }}'>
+          {{#if custom_excerpt}}
+            <div class='c-content__excerpt'>{{ custom_excerpt }}</div>
+          {{/if}}
+
+          {{!-- Show the tags, share, and comments if visitor can access the post, this means that:
+          1. The post is public for anyone
+          2. The post is published for subscribers and the user is a subscriber
+          3. The post is for paid members only and the user is a paid member --}}
+          {{#if access}}
+
+            <div class='c-content'>
+              {{ content }}
+            </div>
+
+            {{bluedot_comment_button}}
+
+            {{#if tags}}
+              <div class='c-tags'>
+                {{ tags separator='' }}
+              </div>
+            {{/if}}
+
+            {{> share }}
+          {{!-- If the post is published for subscribers and paid members and the visitor is not one of those, show the upgrade box --}}
+          {{else}}
+              <!-- from bluedot -->
+              {{bluedot_paywall}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </article>
+</main>
+
+{{bluedot_paywall_popup}}
+
+{{/post}}
+
+{{> related-posts}}
+
+{{> shop }}

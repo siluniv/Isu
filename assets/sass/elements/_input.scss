@@ -1,0 +1,37 @@
+/*------------------------------------*\
+  Elements > Inputs
+\*------------------------------------*/
+
+input[type='text'],
+input[type='password'],
+input[type='date'],
+input[type='month'],
+input[type='week'],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'],
+input[type='color'],
+input[type='datetime'],
+input[type='datetime-local'],
+select,
+textarea {
+  width: 100%;
+  display: block;
+  padding: $space-8 $space-16;
+  margin-bottom: $space-16;
+  border: 1px solid var(--color-border);
+  border-radius: $global-border-radius;
+  outline: none;
+  color: var(--color-text);
+  font-size: $type-md;
+  line-height: $type-md-lh;
+  font-family: $type-sans-serif;
+  background-color: var(--bg-color);
+
+  &:focus {
+    border-color: var(--color-brand);
+  }
+}

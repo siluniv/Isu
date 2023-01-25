@@ -1,0 +1,48 @@
+/*------------------------------------*\
+  Components > Subscribe List
+\*------------------------------------*/
+
+.c-subscribe-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    white-space: nowrap;
+    margin-bottom: $space-8;
+
+    &:not(:last-child) {
+      margin-right: $space-8;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: $type-xs;
+    line-height: $type-xs-lh;
+    font-weight: $type-500;
+    padding: $space-8 ($space-8 + quarter($space-8));
+    background-color: var(--bg-color);
+    border-radius: $global-border-radius;
+    transition: color half($global-transition) ease;
+
+    @include attention() {
+      color: var(--color-brand);
+    }
+  }
+
+  &__media {
+    border-radius: $space-16;
+    background-color: var(--bg-gray);
+  }
+
+  &__icon {
+    width: $space-16 + half($space-8);
+    height: $space-16 + half($space-8);
+  }
+
+  &__name {
+    margin-left: $space-8;
+  }
+}

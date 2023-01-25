@@ -1,0 +1,22 @@
+<div class='c-post-byline'>
+  {{#primary_author}}
+    <a href='{{ url }}' class='c-post-byline__author'>
+      {{#if profile_image}}
+        <div class='c-post-byline__image-wrap'>
+          <img class='c-post-byline__image lazyload' data-src='{{ img_url profile_image size='xs' }}' alt='{{ name }}' width='32' height='32'>
+        </div>
+      {{/if}}
+      {{ name }}
+    </a>
+  {{/primary_author}}
+
+  <time class='c-post-byline__date' datetime='{{ date format='YYYY-MM-DD' }}' title='{{ date format='YYYY년 MM월 DD일' }}'>{{ date format='YYYY년 MM월 DD일' }}</time>
+
+  {{#if (not @site.comment_read_permission "none")}}
+      {{#if comment_count}}
+      <span class="c-post-byline__comment"><a class="byline-comments" href="{{url}}comments" data-portal="comment" data-post-uuid="{{uuid}}">댓글 {{comment_count}}개 보기</a></span>
+      {{else}}
+      <span class="c-post-byline__comment"><a class="byline-comments" href="{{url}}comments" data-portal="comment" data-post-uuid="{{uuid}}">댓글 남기기</a></span>
+      {{/if}}
+  {{/if}}
+</div>

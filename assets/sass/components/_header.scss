@@ -1,0 +1,41 @@
+/*------------------------------------*\
+  Components > Header
+\*------------------------------------*/
+
+.c-header {
+  padding: $space-24 0;
+}
+
+.js-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  will-change: transform;
+  transition: background-color $global-transition ease, transform $global-transition ease;
+
+  &--pinned {
+    transform: translateY(0);
+    backdrop-filter: saturate(180%) blur(20px);
+    background-color: var(--bg-transparent);
+
+    @include mq($from: desktop) {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+    }
+
+    @-moz-document url-prefix() {
+      background-color: var(--bg-color);
+    }
+  }
+
+  &--unpinned {
+    transform: translateY(-100%)
+  }
+
+  &--top {
+    box-shadow: none;
+    background-color: transparent;
+    backdrop-filter: none;
+  }
+}

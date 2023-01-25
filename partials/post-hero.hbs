@@ -1,0 +1,20 @@
+<header class='c-post-hero'>
+  <div class='c-post-header'>
+    <div class='o-grid'>
+      <div class='o-grid__col o-grid__col--4-4-s {{#if feature_image}} o-grid__col--2-4-m {{/if}} {{#unless feature_image}} o-grid__col--2-3-m o-grid__col--center {{/unless}}'>
+        <div class='c-post-hero__content {{#unless feature_image}} c-post-hero__content--no-image {{/unless}}'>
+          <h1 class='c-post-header__title'>{{ title }}</h1>
+          {{#is 'post'}}{{> post-meta }}{{/is}}
+        </div>
+      </div>
+
+      {{#if feature_image}}
+        <div class='o-grid__col o-grid__col--4-4-s o-grid__col--2-4-m'>
+          <div class='c-post-hero__media'>
+            <img class='c-post-hero__image lazyload' data-src='{{ img_url feature_image size='xl' }}' alt='{{ title }}'>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</header>

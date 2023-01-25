@@ -1,0 +1,153 @@
+/*------------------------------------*\
+  Components > Post Hero
+\*------------------------------------*/
+
+.c-post-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: $space-72 0 $space-48;
+  margin-bottom: $space-48;
+  background-color: var(--bg-gray);
+
+  @include mq($from: tablet) {
+    padding: double($space-56) 0 $space-80;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: 20%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include mq($until: desktop) {
+      margin-bottom: $space-16;
+    }
+
+    @include mq($from: tablet) {
+      padding-right: $space-32;
+      justify-content: center;
+      height: 100%;
+    }
+
+    &--no-image {
+      padding-right: 0;
+      padding-bottom: 0;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    border-radius: $global-border-radius;
+    box-shadow: var(--image-shadow);
+
+    @include mq($from: tablet) {
+      max-height: 40vh;
+      margin-left: auto;
+      margin-right: $space-8;
+    }
+
+    @include mq($from: desktop) {
+      max-height: 60vh;
+    }
+  }
+}
+
+.c-post-header {
+  width: 100%;
+
+  &__title {
+    font-size: $type--h-sm;
+    line-height: $type--h-sm-lh;
+    font-weight: $type-800;
+    letter-spacing: - $global-letter-spacing;
+
+    @include mq($from: tablet) {
+      font-size: $type--h-md;
+      line-height: $type--h-md-lh;
+    }
+
+    @include mq($from: desktop) {
+      font-size: $type--h-lg;
+      line-height: $type--h-lg-lh;
+      letter-spacing: - double($global-letter-spacing);
+    }
+  }
+
+  &__sub-title {
+    font-size: $type--h-xs;
+    line-height: $type--h-xs-lh;
+    font-weight: $type-600;
+    margin-top: $space-24;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    margin-top: $space-24;
+    font-size: $type-xs;
+    line-height: $type-xs-lh;
+    letter-spacing: $global-letter-spacing;
+  }
+}
+
+.c-post-byline {
+  display: flex;
+  align-items: center;
+  margin-top: $space-16;
+  font-size: $type-sm;
+  line-height: $type-sm-lh;
+  letter-spacing: $global-letter-spacing;
+
+  &__author {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-weight: $type-600;
+  }
+
+  &__image-wrap {
+    width: $space-32;
+    height: $space-32;
+    margin-right: $space-8;
+    border-radius: 100%;
+    background-color: var(--bg-white);
+  }
+
+  &__image {
+    object-fit: cover;
+    width: $space-32;
+    height: $space-32;
+    border-radius: 100%;
+    box-shadow: 0 0 0 quarter($space-8) var(--color-white);
+  }
+
+  &__date,
+  &__comment {
+    color: var(--color-gray);
+    line-height: 1;
+    padding-left: $space-16;
+    margin-left: $space-16;
+    font-weight: $type-500;
+    box-shadow: inset 1px 0px 0px 0px;
+  }
+
+  &__comment {
+    a {
+      border-bottom:1px solid var(--text);
+      transition:0.3s;
+
+      &:hover {
+        opacity:0.8;
+      }
+    }
+  }
+}

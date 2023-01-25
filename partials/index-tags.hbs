@@ -1,0 +1,5 @@
+{{#get 'tags' limit='2' include='count.posts' order='count.posts desc'}}
+  {{#foreach tags}}
+    {{> card-tag }}
+  {{/foreach}}
+{{/get}}

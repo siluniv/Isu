@@ -1,0 +1,19 @@
+<footer class='c-footer'>
+  <div class='o-grid'>
+    {{!-- <div class='o-grid__col o-grid__col--4-4-s'>
+      {{> social-icons }}
+    </div> --}}
+
+    {{#if @site.secondary_navigation}}
+      <div class='o-grid__col o-grid__col--4-4-s u-mt-16'>
+        <ul class='c-footer-nav o-plain-list'>
+          {{ navigation type='secondary' }}
+        </ul>
+      </div>
+    {{/if}}
+
+    <div class="o-grid__col o-grid__col--full">
+      {{ bluedot_footer }}
+    </div>
+  </div>
+</footer>

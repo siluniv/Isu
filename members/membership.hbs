@@ -1,0 +1,29 @@
+{{!< ../default}}
+
+<div class='o-wrapper'>
+  <div class='c-archive'>
+    <div class="c-post-header">
+      <div class="o-grid">
+        <div class="o-grid__col o-grid__col--4-4-s   o-grid__col--2-3-m o-grid__col--center ">
+          <div class="c-post-hero__content  c-post-hero__content--no-image ">
+            <h1 class="c-post-header__title">유료 구독하기</h1>
+            {{#if @site.paywall.paywallMessage}}
+              <h3 class="c-post-header__sub-title">{{{@site.paywall.paywallMessage}}}</h3>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="bluedot-wrapper">
+        <main class="bluedot-main bluedot-signin outer">
+            <div class="inner">
+                <div class="price-info-wrap light">
+                    {{bluedot_price}}
+                </div>
+            </div>
+        </main>
+    </div>
+  </div>
+</div>

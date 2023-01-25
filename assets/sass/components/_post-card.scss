@@ -1,0 +1,143 @@
+/*------------------------------------*\
+  Components > Post Card
+\*------------------------------------*/
+
+.c-post-card {
+  display: flex;
+  width: 100%;
+  position: relative;
+  flex-direction: column;
+  border-radius: $global-border-radius;
+  margin-bottom: $space-32;
+  transition: all $global-faster-transition ease 0s;
+  background-color: var(--bg-gray);
+
+  @include mq($from: desktop) {
+    margin-bottom: $space-48;
+  }
+
+  &-wrap {
+    display: flex;
+  }
+
+  &__media {
+    display: block;
+    padding-top: 100%;
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      content: '';
+      background: linear-gradient(to top, rgba(0, 0, 0, .9) 0%, rgba(84, 84, 84, 0) 50%);
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: $space-32;
+    color: var(--color-white);
+
+    &--no-image {
+      position: static;
+      margin-top: auto;
+      color: var(--color-text);
+    }
+  }
+
+  .tag-template.tag-podcast & &__number,
+  .home-template & &__number {
+    font-weight: $type-800;
+    font-size: $type--h-xs;
+    letter-spacing: - $global-letter-spacing;
+    margin-right: $space-8;
+
+    &:after {
+      counter-increment: episode-number -1;
+      content: 'E' counter(episode-number);
+    }
+
+    @include mq($from: desktop) {
+      font-size: $type--h-sm;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: baseline;
+    font-size: $type-sm;
+    line-height: $type-sm-lh;
+    font-weight: $type-600;
+    letter-spacing: $global-letter-spacing;
+    margin-bottom: $space-8;
+  }
+
+  &__visibility {
+    margin-left: $space-8;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      background-color: var(--color-white);
+      width: $space-16;
+      height: 1px;
+      vertical-align: middle;
+    }
+
+    span {
+      display: none;
+      margin-left: half($space-8);
+    }
+
+    &--paid .paid,
+    &--members .members,
+    &--public .public {
+      display: inline-block;
+    }
+  }
+
+  .c-post-card__content--no-image {
+    .c-post-card__visibility:before { background-color: var(--color-text); }
+  }
+
+  &__title {
+    font-weight: $type-700;
+    font-size: $type--h-sm;
+    line-height: $type--h-sm-lh;
+    letter-spacing: - $global-letter-spacing;
+    margin-bottom: 0;
+
+    @include mq($from: tablet) {
+      font-size: $type--h-sm;
+      line-height: $type--h-sm-lh;
+    }
+
+    @include mq($from: desktop) {
+      font-size: $type--h-md;
+      line-height: $type--h-md-lh;
+    }
+  }
+
+  @include attention() {
+    transform: translateY(-3px);
+
+    .c-post-card__image {
+      filter: grayscale(0);
+    }
+  }
+}

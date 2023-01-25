@@ -1,0 +1,23 @@
+/*------------------------------------*\
+  Components > Footer
+\*------------------------------------*/
+
+.c-footer {
+  text-align: center;
+  padding: $space-40 0;
+  margin-top: $space-80;
+  background-color: var(--bg-gray);
+
+  &__copyright {
+    color: var(--color-gray);
+
+    a {
+      color: var(--color-gray);
+      transition: color $global-faster-transition ease;
+
+      @include attention() {
+        color: var(--color-brand);
+      }
+    }
+  }
+}

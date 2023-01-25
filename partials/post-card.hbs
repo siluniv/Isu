@@ -1,0 +1,33 @@
+<div class='js-post-card-wrap c-post-card-wrap o-grid__col o-grid__col--initial-grow o-grid__col--4-4-s o-grid__col--2-4-m o-grid__col--2-4-l {{ post_class }}'>
+  <a href='{{ url }}' class='c-post-card {{#if featured}} c-post-card--featured {{/if}}'>
+    {{#if feature_image}}
+      <div class='c-post-card__media'>
+        <img
+          alt='{{ title }}'
+          class='c-post-card__image lazyload'
+          data-srcset='
+            {{ img_url feature_image size='md' }} 320w,
+            {{ img_url feature_image size='lg' }} 578w,
+            {{ img_url feature_image size='xl' }} 1156w'
+          sizes='(min-width: 1360px) 578px, (min-width: 640px) calc(44.86vw - 23px), calc(100vw - 48px)'
+          data-src='{{ img_url feature_image size='xl' }}'
+        >
+      </div>
+    {{/if}}
+
+    <div class='c-post-card__content {{#unless feature_image}} c-post-card__content--no-image {{/unless}}'>
+      <div class='c-post-card__meta'>
+        {{!-- <span class='c-post-card__number'></span> --}}
+        <time class='c-post-card__date' datetime='{{ date format='YYYY-MM-DD' }}' title='{{ date format='YYYY년 MM월 DD일' }}'>{{ date format='YYYY년 MM월 DD일' }}</time>
+
+        <div class='c-post-card__visibility c-post-card__visibility--{{ visibility }}'>
+          <span class='paid'>{{t 'Paid' }}</span>
+          <span class='members'>{{t 'Members' }}</span>
+          <span class='public'>{{t 'Public' }}</span>
+        </div>
+      </div>
+
+      <h2 class='c-post-card__title'>{{ title }}</h2>
+    </div>
+  </a>
+</div>
