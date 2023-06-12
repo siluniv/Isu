@@ -1,18 +1,25 @@
 routes:
   /subscribe/: members/subscribe
+  /membership/: members/membership
   /signup/: members/signup
   /signin/: members/signin
   /account/: members/account
+
+  # Route for Shop
+  /shop/online-class/: routes/shop/online-class
+  /shop/webinar/: routes/shop/webinar
+  /shop/digital-book/: routes/shop/digital-book
+  /shop/etc/: routes/shop/etc
+
+  /blog/:
+    controller: channel
+    template: blog
+    filter: tag:-home
 
 collections:
   /:
     permalink: /{slug}/
     template: index
-    filter: tag:podcast
-  /blog/:
-    permalink: /{slug}/
-    template: blog
-    filter: tag:blog
 
 taxonomies:
   tag: /tag/{slug}/

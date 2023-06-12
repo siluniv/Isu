@@ -63,7 +63,7 @@
 
   {{ ghost_head }}
 </head>
-<body class='{{ body_class }} {{block "dynamic_body_class"}}'>
+<body class='{{ body_class }} {{block "dynamic_body_class"}}{{{block "custom_body_class"}}}'>
 
   <div class='c-site-container'>
     {{> header }}
