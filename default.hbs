@@ -64,34 +64,29 @@
   {{ ghost_head }}
 </head>
 <body class='{{ body_class }} {{block "dynamic_body_class"}}{{{block "custom_body_class"}}}'>
-
+<div class="o-app">
   <div class='c-site-container'>
     {{> header }}
 
     {{{ body }}}
-
-    {{> unreadbook_footer}}
-
-    <div class="c-footer b-footer">
-      <div class="o-grid">
-        <div class="o-grid__col o-grid__col--full">
-          {{ bluedot_footer }}
-        </div>
-      </div>
-    </div>
   </div>
+  <div class="o-footer">
+    {{> common/footer/default }}
+    {{> common/footer/provider }}
+  </div>
+</div>
 
-  <script src='{{ asset 'js/app.min.js' }}'></script>
 
+<div class="o-app__func">
+  <script src="{{ asset 'js/app.min.js' }}"></script>
   <script>
     var posts_loop = document.querySelector('.c-loop');
     if (posts_loop) {
       posts_loop.style.counterReset = 'episode-number ' + (parseInt(posts_total_number) + 1);
     }
   </script>
-
   {{{block "scripts"}}}
-
   {{ ghost_foot }}
+</div>
 </body>
 </html>
